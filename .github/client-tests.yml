@@ -1,0 +1,12 @@
+name: client-tests-workflow
+
+on: pull_request
+
+jobs:
+  test-client:
+    runs-on: windows-latest
+    steps:
+      - name: Check out code
+        uses: actions.checkou@v2
+      - name: Goto client and run tests
+        run: cd clent && npm i && npm test
